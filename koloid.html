@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Koloid – Presentasi Kimia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4efe2;--ink:#14343c;--mute:#566f77;--card:#fffdf6;--line:#2b4a52;--lt:rgba(43,74,82,.28);--sh:rgba(20,52,60,.22);--grid:rgba(20,52,60,.07);--hl:#ffe3c2;--a:#0f7f8c;--b:#4a8426;--c:#d9622b;--d:#a86f00;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e3640;--ink:#f6f1e0;--mute:#a3c3c7;--card:#164954;--line:#7fb3b8;--lt:rgba(127,179,184,.3);--sh:rgba(0,0,0,.35);--grid:rgba(255,255,255,.05);--hl:#1f6270;--a:#63d4cc;--b:#a9d466;--c:#f28b50;--d:#f2c75c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e3640;--ink:#f6f1e0;--mute:#a3c3c7;--card:#164954;--line:#7fb3b8;--lt:rgba(127,179,184,.3);--sh:rgba(0,0,0,.35);--grid:rgba(255,255,255,.05);--hl:#1f6270;--a:#63d4cc;--b:#a9d466;--c:#f28b50;--d:#f2c75c;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0}
+body{font-family:Nunito,system-ui,sans-serif;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;color:var(--ink);display:flex;flex-direction:column;overflow:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+header,footer{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px}
+header b{font:700 .95rem Poppins,sans-serif;color:var(--a)}
+.hb{display:flex;gap:8px;align-items:center}
+.ib,.btn{background:var(--card);border:2px solid var(--line);color:var(--ink);border-radius:10px;padding:9px 16px;font:700 1rem Nunito,sans-serif;cursor:pointer;box-shadow:3px 3px 0 var(--sh)}
+.ib:active,.btn:active{transform:translate(2px,2px);box-shadow:none}
+.ib:disabled{opacity:.35;cursor:default}
+#prog{position:relative;z-index:2;height:4px;background:var(--lt)}
+#bar{height:100%;width:0;background:var(--c);transition:width .35s}
+main{flex:1;min-height:0;position:relative;z-index:1}
+.s{position:absolute;inset:0;overflow-y:auto;padding:12px 5vw;display:none}
+.s.on{display:flex;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateX(var(--dx,0px))}}
+.w{margin:auto;width:100%;max-width:1040px}
+h1{font:700 clamp(3.2rem,15vw,7rem)/1 Poppins,sans-serif;margin:.1em 0}
+h2{font:700 clamp(1.5rem,4.6vw,2.5rem)/1.2 Poppins,sans-serif;margin:.15em 0 .7em;display:inline-block;padding-bottom:.3em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='8'%3E%3Cpath d='M0 4q4.5-6 9 0t9 0' fill='none' stroke='%23f28b50' stroke-width='2'/%3E%3C/svg%3E") repeat-x left bottom}
+h3{margin:0 0 .35em;font:700 1.15rem Poppins,sans-serif}
+p,li{font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.55}
+p{margin:.35em 0}.mu{color:var(--mute)}.small{font-size:.95rem}
+.lead{font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--mute);max-width:34em;margin:.4em auto}
+.ctr{text-align:center}
+.tag,.note{font:600 1.55rem Caveat,cursive;color:var(--c);display:inline-block;transform:rotate(-1.5deg)}
+.note{color:var(--d)}
+.card{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:15px 18px;box-shadow:3px 3px 0 var(--sh)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;margin:14px 0}
+
+.a h3{color:var(--a)}.b h3{color:var(--b)}.c h3{color:var(--c)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{padding:5px 14px;border-radius:99px;border:2px solid var(--line);background:var(--card);font-size:1rem}
+.tw{overflow-x:auto;margin:12px 0}
+.t{width:100%;border-collapse:collapse;min-width:520px;background:var(--card)}
+.t th{text-align:left;background:var(--a);color:var(--bg);font:700 .95rem Poppins,sans-serif;padding:9px 12px;border:1px solid var(--lt)}
+.t td{padding:9px 12px;border:1px solid var(--lt);font-size:1rem}
+.t .hl{background:var(--hl);font-weight:700}
+.eq{font:700 clamp(1.3rem,4.4vw,2.5rem) Poppins,sans-serif;text-align:center;margin:.6em 0}
+.big{font:700 clamp(2.2rem,9vw,5.2rem)/1.1 Poppins,sans-serif;margin:.2em 0}
+.hand{font:600 clamp(3rem,13vw,7rem)/1 Caveat,cursive;color:var(--c);transform:rotate(-3deg);margin:.1em 0}
+.warn{background:var(--card);border:2px dashed var(--c);border-radius:12px;padding:10px 14px;margin:12px 0}
+.fk{width:110px;height:120px}.fk .bb{fill:none;stroke:var(--ink);stroke-width:1.5;transform-box:fill-box;animation:bu 3s ease-in infinite}.fk .b2{animation-delay:1.3s}
+@keyframes bu{to{transform:translateY(-22px);opacity:0}}
+.sv{width:100%;max-width:260px}.f1{fill:var(--a)}.f2{fill:var(--c)}.st{stroke:var(--mute);fill:none;stroke-width:3;stroke-linecap:round}
+.jg{grid-template-columns:repeat(3,1fr)}.jc{text-align:center;font-size:.95rem;margin:.4em 0}
+.jar{position:relative;height:110px;border:2px solid var(--line);border-top:0;border-radius:0 0 20px 20px;overflow:hidden;background:var(--card)}
+.jar i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%;background:var(--jc);animation-delay:var(--d)}
+.j1{--jc:var(--a)}.j2{--jc:var(--b)}.j3{--jc:var(--c)}
+.j1 i{animation:jg1 3s ease-in-out infinite alternate}.j2 i{animation:jg2 1.2s ease-in-out infinite alternate}.j3 i{animation:sink 5s ease-in infinite}
+@keyframes jg1{to{transform:translate(4px,-3px)}}
+@keyframes jg2{25%{transform:translate(8px,-6px)}50%{transform:translate(-6px,5px)}to{transform:translate(5px,8px)}}
+@keyframes sink{from{transform:translateY(-10px);opacity:0}15%{opacity:1}to{transform:translateY(80px)}}
+.sim{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media(max-width:780px){.sim{grid-template-columns:1fr}}
+#sim,#gr{width:100%;height:auto;border-radius:12px;background:var(--card);border:2px solid var(--line);box-shadow:3px 3px 0 var(--sh)}#sim{border:0;box-shadow:none;border-radius:0;background:none;display:block;transform-origin:50% 55%;transition:transform .9s cubic-bezier(.4,0,.2,1)}.zw{position:relative;overflow:hidden;border-radius:12px;border:2px solid var(--line);box-shadow:3px 3px 0 var(--sh);background:var(--card)}.zw.zin #sim{transform:scale(1.7)}.zo{position:absolute;right:12px;bottom:12px;z-index:3;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;pointer-events:none}.zo.show{opacity:1;transform:none;pointer-events:auto}
+.btn{display:block;width:100%}.btn:hover,.btn.act{background:var(--c);color:var(--bg)}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+#st,#gs,#vt{min-height:4.4em;font-size:1rem;line-height:1.45}
+#stp{padding-left:1.2em;margin:8px 0}#stp li{font-size:.95rem;color:var(--mute);margin:.2em 0}#stp .done{color:var(--b)}#stp .on{color:var(--ink);font-weight:700}
+.ch{width:100%;height:auto}.ch text{fill:var(--mute);font:600 11px Nunito,sans-serif}.ax{stroke:var(--ink);stroke-width:2;fill:none}.nw{stroke:var(--a);stroke-width:3}.nn{stroke:var(--c);stroke-width:3;fill:none}#vd{fill:var(--c);stroke:var(--ink);stroke-width:2}
+input[type=range]{width:100%;accent-color:var(--c)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<header><b>Kimia · Koloid</b><div class="hb"><button class="ib" id="th" aria-label="Ganti tema">◐</button><button class="ib" id="mx" aria-label="Layar penuh" title="Layar penuh"></button></div></header>
+<div id="prog"><div id="bar"></div></div>
+<main></main>
+<footer><button class="ib" id="pv">← Kembali</button><span class="mu" id="cnt"></span><button class="ib" id="nx">Lanjut →</button></footer>
+<script>
+const $=s=>document.querySelector(s);
+const cd=(t,b,c='a')=>`<div class="card ${c}"><h3>${t}</h3><p>${b}</p></div>`;
+const tb=(h,r,hl=-1)=>'<div class="tw"><table class="t"><tr>'+h.map((c,i)=>`<th class="${i==hl?'hl':''}">${c}</th>`).join('')+'</tr>'+r.map(R=>'<tr>'+R.map((c,i)=>`<td class="${i==hl?'hl':''}">${c}</td>`).join('')+'</tr>').join('')+'</table></div>';
+const dots=(cx,cy)=>[[0,-14],[14,0],[-14,2],[4,14],[-4,-2]].map(([x,y])=>`<circle cx="${cx+x}" cy="${cy+y}" r="4"/>`).join('');
+const ar='<path class="st" d="M82 40h40m-9-9 9 9-9 9"/>';
+const sv1=`<svg viewBox="0 0 220 80" class="sv"><circle class="f1" cx="40" cy="40" r="28"/>${ar}<g class="f1">${dots(175,40)}</g></svg>`;
+const sv2=`<svg viewBox="0 0 220 80" class="sv"><g class="f2">${dots(45,40)}</g>${ar}<circle class="f2" cx="180" cy="40" r="16"/></svg>`;
+const flask='<svg class="fk" viewBox="0 0 100 110"><path d="M38 6H62M42 6V40L12 92Q6 104 20 104H80Q94 104 88 92L58 40V6" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M25 70H75L88 92Q92 100 82 100H18Q8 100 12 92Z" fill="var(--c)" opacity=".9"/><circle class="bb" cx="45" cy="84" r="3"/><circle class="bb b2" cx="58" cy="90" r="2.4"/></svg>';
+const jar=(t,n,sz,cl,cap)=>`<div class="jb"><div class="jar j${t}">${Array.from({length:n},(_,i)=>`<i style="--x:${(i*37+11)%88+4}%;--y:${(i*53+7)%80+5}%;--s:${sz}px;--d:${(i*.37)%3}s"></i>`).join('')}</div><p class="jc"><b style="color:var(--${cl})">${cap[0]}</b><br><span class="mu">${cap[1]}</span></p></div>`;
+const jars=()=>`<div class="g jg">${jar(1,26,3,'a',['Larutan','< 1 nm'])}${jar(2,14,7,'b',['Koloid','1–100 nm'])}${jar(3,8,14,'c',['Suspensi','> 100 nm'])}</div>`;
+const S=[
+`<div class="ctr"><div class="tag">praktik 1</div><p class="big">Tepung maizena + air</p><div class="hand">Perhatikan, ya!</div></div>`,
+`<div class="tag">praktik 1 · hasilnya</div><h2>Maizena + air membentuk suspensi</h2><div class="g">`+cd('Ukuran partikel','Granula pati jagung berukuran sekitar 5–30 µm, dengan rata-rata sekitar 10 µm. Artinya 5.000–30.000 nm, jauh di atas batas koloid 100 nm.','a')+cd('Ciri-cirinya','Keruh keputihan, partikelnya masih kelihatan, dan lama-kelamaan mengendap kalau didiamkan.','b')+cd('Kenapa bukan koloid?','Butirannya terlalu besar, sehingga pengaruh gravitasi lebih kuat daripada gerak Brown. Itulah sebabnya disebut suspensi.','c')+`</div><p class="mu small">Pati adalah polimer glukosa yang tersusun dari amilosa dan amilopektin. Granulanya tidak larut dalam air dingin, jadi hanya tersebar di dalamnya, bukan melarut.</p>`,
+`<div class="tag">fun fact</div><h2>Oobleck: maizena yang bisa jadi padat</h2><div class="g"><div class="card a"><h3>Namanya dari buku anak</h3><p>Nama “oobleck” dipopulerkan lewat buku anak-anak Dr. Seuss tahun 1949, <i>Bartholomew and the Oobleck</i>, tentang zat hijau yang lengket.</p></div><div class="card b"><h3>Bisa dipijak kalau cepat</h3><p>Kalau ditekan atau dipukul cepat, campurannya terasa padat. Karena itu orang bisa berlari di atas kolam oobleck selama terus bergerak. Kalau berhenti, badannya ikut tenggelam.</p></div><div class="card c"><h3>Coba sendiri</h3><p>Aduk maizena dan air dengan perbandingan kasar 2 : 1. Lalu tekan pelan dan tekan cepat, dan bandingkan hasilnya.</p></div></div>`,
+`<div class="tag">praktik 2</div><h2>Ubah jadi koloid: teknik mekanik</h2><div class="sim"><canvas id="gr"></canvas><div><div class="card" id="gs"></div><div class="btns"><button class="btn" id="gb">Giling</button><button class="btn" id="g0">Ulang</button></div><p class="mu small">Idenya sederhana: butiran maizena digiling berulang kali sampai ukurannya masuk rentang 1–100 nm. Di laboratorium biasanya dipakai penggiling khusus atau ball mill, lalu hasilnya didispersikan ke dalam air.</p></div></div>`,
+`<div class="tag">praktik 2 · penjelasan kimiawi</div><h2>Apa yang terjadi secara kimia?</h2><div class="g">`+cd('Ukurannya berubah, zatnya tidak','Penggilingan termasuk perubahan fisika. Pati tetap berupa polimer glukosa (C<sub>6</sub>H<sub>10</sub>O<sub>5</sub>)<sub>n</sub> dengan struktur kimia yang sama. Hanya ukuran granulanya yang berubah.','a')+cd('Ikatan hidrogen diputus','Energi mekanik dari tumbukan dan gesekan memutus ikatan hidrogen serta merusak struktur heliks ganda yang tersusun rapi di dalam granula. Dalam satu penelitian, kristalinitas pati turun dari sekitar 30% menjadi 16%.','b')+cd('Gugus –OH makin terbuka','Permukaan yang baru terbentuk membuat lebih banyak gugus –OH berada di luar. Gugus ini berikatan hidrogen dengan air (terhidrasi) dan memberi muatan permukaan, sehingga partikel saling tolak dan lebih stabil melayang.','c')+cd('Tapi gampang menggumpal lagi','Luas permukaannya besar, jadi partikel hasil gilingan mudah bergabung kembali lewat ikatan hidrogen. Makanya biasanya perlu zat penstabil, misalnya pengemulsi.','a')+`</div><p class="mu small"><span class="note">catatan:</span> dengan ball mill, pati baru mengecil hingga ukuran rata-rata sekitar 270–470 nm. Untuk masuk ke rentang 1–100 nm, penggilingannya perlu lebih intens.</p>`,
+`<div class="tag">cara 2</div><h2>Koloid Fe(OH)<sub>3</sub> <span class="mu">(Besi(III) hidroksida)</span></h2><p>Koloid ini dibuat dengan <b style="color:var(--c)">metode kondensasi lewat proses hidrolisis</b>.</p><h3 style="margin-top:1em;color:var(--a)">Alat dan bahan</h3><div class="chips">${['Larutan FeCl<sub>3</sub> (besi(III) klorida)','Air (H<sub>2</sub>O)','Gelas kimia','Pipet tetes','Alat pemanas','Pengaduk kaca'].map(x=>`<span class="chip">${x}</span>`).join('')}</div><p class="mu">Yuk, langsung kita coba di slide berikutnya.</p>`,
+`<div class="tag">praktik 3 · coba sendiri</div><h2>Membuat sol Fe(OH)<sub>3</sub></h2><div class="sim"><div class="zw" id="zw"><canvas id="sim"></canvas><button class="ib zo" id="zo">Zoom out</button></div><div><div class="card" id="st"></div><div class="btns"><button class="btn" data-a="heat"></button><button class="btn" data-a="drip">Tetesi FeCl<sub>3</sub></button><button class="btn" data-a="beam">Senter</button><button class="btn" data-a="reset">Ulang</button></div><ol id="stp"><li>Siapkan air di dalam gelas kimia.</li><li>Panaskan air hingga mendidih.</li><li>Teteskan larutan FeCl<sub>3</sub> sedikit demi sedikit ke dalam air mendidih.</li><li>Amati perubahan warnanya.</li><li>Larutan berubah merah kecokelatan: sol Fe(OH)<sub>3</sub> terbentuk.</li></ol></div></div>`,
+`<h2>Reaksi hidrolisis</h2><div class="eq">FeCl<sub>3</sub> + 3H<sub>2</sub>O → <span style="color:var(--c)">Fe(OH)<sub>3</sub></span> + 3HCl</div><div class="chips"><span class="chip">FeCl<sub>3</sub> = Besi(III) klorida</span><span class="chip">H<sub>2</sub>O = Air</span><span class="chip">Fe(OH)<sub>3</sub> = Besi(III) hidroksida</span><span class="chip">HCl = Asam klorida</span></div><div class="card b"><h3>Mengapa metode kondensasi?</h3><p>Ion-ion hasil hidrolisis bergabung membentuk partikel Fe(OH)<sub>3</sub> yang berukuran koloid. Air panas mempercepat proses ini, sehingga sol Fe(OH)<sub>3</sub> cepat terbentuk.</p></div><div class="warn">Catatan: percobaan ini sebaiknya dilakukan dengan pengawasan guru karena melibatkan bahan kimia dan pemanasan.</div>`,
+`<div class="ctr"><p class="note">terima kasih sudah menyimak</p><div class="big">Ada pertanyaan?</div><button class="ib" data-a="home">Ulangi dari awal</button></div>`
+];
+const SIM=S.findIndex(h=>h.includes('id="sim"')),GRI=S.findIndex(h=>h.includes('id="gr"'));
+const main=$('main');
+main.innerHTML=S.map(h=>`<section class="s"><div class="w">${h}</div></section>`).join('');
+const els=[...main.children];let cur=0,last='';
+function go(n){n=Math.max(0,Math.min(S.length-1,n));if(n!==cur)zoomTo(false);document.documentElement.style.setProperty('--dx',(n>cur?44:-44)+'px');els[cur].classList.remove('on');cur=n;els[cur].classList.add('on');els[cur].scrollTop=0;last='';$('#cnt').textContent=(n+1)+' / '+S.length;$('#bar').style.width=((n+1)/S.length*100)+'%';$('#pv').disabled=!n;$('#nx').disabled=n==S.length-1}
+$('#pv').onclick=()=>go(cur-1);$('#nx').onclick=()=>go(cur+1);
+addEventListener('keydown',e=>{if(e.key=='ArrowRight'||e.key=='PageDown')go(cur+1);else if(e.key=='ArrowLeft'||e.key=='PageUp')go(cur-1);else if(e.key=='Home')go(0);else if(e.key=='End')go(S.length-1)});
+let tx=0,ty=0;
+addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>70&&Math.abs(dy)<50&&!e.target.closest('.tw,input'))go(cur+(dx<0?1:-1))},{passive:true});
+let ink='#fff',cols=['#0bf','#9e3','#f80','#fc0'];
+function readCols(){const s=getComputedStyle(document.documentElement);ink=s.getPropertyValue('--ink').trim();cols=['--a','--b','--c','--d'].map(v=>s.getPropertyValue(v).trim())}
+$('#th').onclick=()=>{const d=document.documentElement,dk=d.dataset.theme?d.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;d.dataset.theme=dk?'light':'dark';readCols()};
+const fsBtn=$('#mx'),fsDoc=document.documentElement,fsReq=fsDoc.requestFullscreen||fsDoc.webkitRequestFullscreen;
+if(!fsReq)fsBtn.hidden=true;
+const fsOn=()=>!!(document.fullscreenElement||document.webkitFullscreenElement);
+const fsIcMax='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+const fsIcMin='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>';
+const fsSync=()=>{const on=fsOn();fsBtn.innerHTML=on?fsIcMin:fsIcMax;const t=on?'Keluar layar penuh':'Layar penuh';fsBtn.setAttribute('aria-label',t);fsBtn.title=t};
+fsBtn.onclick=()=>{const p=fsOn()?(document.exitFullscreen||document.webkitExitFullscreen).call(document):fsReq.call(fsDoc);if(p&&p.catch)p.catch(()=>{})};
+document.addEventListener('fullscreenchange',fsSync);document.addEventListener('webkitfullscreenchange',fsSync);
+fsSync();
+/* latar: partikel bergerak acak (gerak Brown) */
+const bg=$('#bg'),bx=bg.getContext('2d'),still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const rs=()=>{bg.width=innerWidth;bg.height=innerHeight};rs();addEventListener('resize',rs);
+const P=Array.from({length:36},(_,i)=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:2+Math.random()*5,vx:0,vy:0,c:i%4}));
+/* viskositas */
+/* penggilingan */
+const gc=$('#gr'),gx=gc.getContext('2d');gc.width=600;gc.height=400;gx.scale(2,2);
+const GL=[[6,20,'sekitar 10 µm (10.000 nm)','Suspensi'],[18,12,'sekitar 3 µm (3.000 nm)','Suspensi'],[54,7.5,'sekitar 1 µm (1.000 nm)','Suspensi'],[120,4.5,'sekitar 300 nm','Masih suspensi (di atas 100 nm)'],[240,3,'sekitar 100 nm','Tepat di batas koloid'],[400,2,'sekitar 50 nm','Koloid (1–100 nm)']];
+let gl=0,gp=[];
+function gmk(){gp=Array.from({length:GL[gl][0]},()=>({x:12+Math.random()*276,y:12+Math.random()*176}));$('#gs').innerHTML='Sudah digiling '+gl+' kali<br>Ukuran rata-rata: <b>'+GL[gl][2]+'</b><br><b style="color:var(--c)">'+GL[gl][3]+'</b>'+(gl==5?'<br>Coba sinari dengan senter, efek Tyndall akan terlihat.':'')}
+$('#gb').onclick=()=>{if(gl<5){gl++;gmk()}};$('#g0').onclick=()=>{gl=0;gmk()};gmk();
+function grind(){gx.clearRect(0,0,300,200);gx.fillStyle=gl>=4?cols[0]:ink;gx.strokeStyle=ink;gx.lineWidth=1;const j=.3+gl*.25,r=GL[gl][1];
+ for(const p of gp){p.x=Math.max(r,Math.min(300-r,p.x+(Math.random()-.5)*j));p.y=Math.max(r,Math.min(200-r,p.y+(Math.random()-.5)*j));gx.globalAlpha=.85;gx.beginPath();gx.arc(p.x,p.y,r,0,6.283);gx.fill();if(gl<4){gx.globalAlpha=1;gx.stroke()}}
+ gx.globalAlpha=1}
+/* simulasi Fe(OH)3 */
+const cv=$('#sim'),x=cv.getContext('2d');cv.width=840;cv.height=640;x.scale(2,2);
+let T=25,heat=0,drops=0,beam=0,dr=null,pt=[],bb=[],rp=[],fr=0;
+const reset=()=>{T=25;heat=0;drops=0;beam=0;dr=null;pt=[];bb=[]};
+const zw=$('#zw'),zo=$('#zo');let zin=false,zlock=false;
+function zoomTo(on){zin=on;zw.classList.toggle('zin',on);zo.classList.toggle('show',on)}
+zo.onclick=()=>{zlock=true;zoomTo(false)};
+function zoomCheck(){const tyn=beam&&solF()>.4;if(!tyn){zlock=false;if(zin)zoomTo(false);return}if(!zin&&!zlock)zoomTo(true)}
+const solF=()=>Math.min(1,pt.filter(p=>p.s).length/32);
+function idx(){const s=solF();return s>=.7?4:s>=.3?3:drops||T>=99?2:heat||T>30?1:0}
+function say(){const s=solF();
+ if(beam)return s>.4?'<b>Efek Tyndall!</b> Berkas cahaya terlihat karena partikel koloid Fe(OH)<sub>3</sub> menghamburkan cahaya.':'Cahaya lewat begitu saja tanpa terhambur. Belum ada koloid, jadi buat sol-nya dulu.';
+ if(s>=.7)return 'Larutannya sudah merah kecokelatan. <b>Sol Fe(OH)<sub>3</sub> sudah terbentuk!</b> Coba nyalakan senter.';
+ if(drops&&T<99)return 'Air belum mendidih, jadi hidrolisisnya lambat dan larutannya baru kuning. Panaskan dulu sampai 100°C.';
+ if(drops)return 'Hidrolisis berlangsung: FeCl<sub>3</sub> + 3H<sub>2</sub>O → Fe(OH)<sub>3</sub> + 3HCl. Tetesi lagi.';
+ if(T>=99)return 'Air mendidih. Tetesi larutan FeCl<sub>3</sub> sedikit demi sedikit.';
+ if(heat)return 'Air sedang dipanaskan. Tunggu sampai mendidih.';
+ return T>30?'Air mulai mendingin. Nyalakan api lagi.':'Siapkan air di gelas kimia, lalu klik “Panaskan air”.'}
+function ui(){const m=say(),k=idx(),h=heat?'Matikan api':'Panaskan air',sg=m+k+h+beam;if(sg==last)return;last=sg;$('#st').innerHTML=m;[...$('#stp').children].forEach((li,i)=>li.className=i<k?'done':i==k?'on':'');$('[data-a=heat]').textContent=h;$('[data-a=beam]').classList.toggle('act',!!beam)}
+main.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!el)return;const a=el.dataset.a;
+ if(a=='heat')heat=!heat;else if(a=='beam')beam=!beam;else if(a=='reset')reset();else if(a=='home')go(0);
+ else if(a=='drip'&&!dr&&drops<8)dr={y:52}});
+function path(){x.beginPath();x.moveTo(125,60);x.lineTo(125,270);x.quadraticCurveTo(125,282,137,282);x.lineTo(283,282);x.quadraticCurveTo(295,282,295,270);x.lineTo(295,60)}
+function sim(){fr++;x.clearRect(0,0,420,320);
+ T=heat?Math.min(100,T+.45):Math.max(25,T-.15);
+ if(heat)for(let i=0;i<5;i++){x.fillStyle=i%2?'#f28b50':'#f2c75c';x.beginPath();x.ellipse(150+i*30,298,7,14+Math.random()*12,0,0,6.283);x.fill()}
+ x.fillStyle='#64748b';x.fillRect(115,306,190,10);
+ const ns=pt.filter(p=>p.s).length,ni=pt.length-ns,sol=Math.min(1,ns/32),io=Math.min(1,ni/20);
+ let r=150+85*io,g=220-20*io,b=240-170*io,a=.35+.2*io;r+=(190-r)*sol;g+=(70-g)*sol;b+=(20-b)*sol;a+=(.8-a)*sol;
+ x.fillStyle=`rgba(${r|0},${g|0},${b|0},${a})`;x.fillRect(127,130,166,150);
+ if(heat&&T>=99&&fr%4==0)bb.push({x:135+Math.random()*150,y:276,r:2+Math.random()*3});
+ x.strokeStyle='rgba(255,255,255,.7)';x.lineWidth=1.5;
+ bb=bb.filter(o=>(o.y-=1.5)>132);bb.forEach(o=>{x.beginPath();x.arc(o.x,o.y,o.r,0,6.283);x.stroke()});
+ for(const p of pt){p.vx=(p.vx+(Math.random()-.5)*(p.s?.5:.9))*.9;p.vy=(p.vy+(Math.random()-.5)*(p.s?.5:.9))*.9;p.x=Math.max(132,Math.min(288,p.x+p.vx));p.y=Math.max(138,Math.min(274,p.y+p.vy));
+  if(!p.s&&T>=99&&++p.k>45)p.s=1;
+  if(p.s){x.fillStyle='rgba(150,45,8,.85)';x.strokeStyle='rgba(251,146,60,.8)';x.lineWidth=1.5;x.beginPath();x.arc(p.x,p.y,5,0,6.283);x.fill();x.stroke()}
+  else{x.fillStyle='rgba(250,204,21,.9)';x.beginPath();x.arc(p.x,p.y,2.5,0,6.283);x.fill()}}
+ if(beam){const s=sol;x.fillStyle='rgba(255,240,150,.3)';x.fillRect(62,190,63,20);
+  x.fillStyle=`rgba(255,245,170,${.1+.65*s})`;x.fillRect(127,190,166,20);
+  x.fillStyle=`rgba(255,240,150,${.05+.25*(1-s*.85)})`;x.fillRect(295,190,125,20);
+  x.fillStyle='#fff';for(let i=0;i<s*45;i++)x.fillRect(130+Math.random()*160,191+Math.random()*18,1.6,1.6)}
+ x.fillStyle=beam?'#facc15':'#94a3b8';x.fillRect(8,182,54,36);x.fillStyle='#475569';x.fillRect(8,182,30,36);
+ x.strokeStyle=ink;x.lineWidth=3;x.globalAlpha=.85;path();x.stroke();x.globalAlpha=1;
+ x.fillStyle='#c2410c';x.beginPath();x.ellipse(210,12,11,14,0,0,6.283);x.fill();x.fillStyle=ink;x.fillRect(206,24,8,26);
+ if(dr){dr.y+=5;x.fillStyle='#facc15';x.beginPath();x.arc(210,dr.y,4,0,6.283);x.fill();
+  if(dr.y>=135){drops++;dr=null;rp.push({r:4});for(let i=0;i<6;i++)pt.push({x:190+Math.random()*40,y:140,vx:0,vy:0,s:0,k:0})}}
+ x.font='700 22px Poppins,sans-serif';x.fillStyle=T>=99?cols[2]:ink;x.textAlign='right';x.fillText(Math.round(T)+'°C',410,34);x.textAlign='left';
+ rp=rp.filter(o=>(o.r+=1.8)<46);x.strokeStyle='#fff';x.lineWidth=1.5;rp.forEach(o=>{x.globalAlpha=.7*(1-o.r/46);x.beginPath();x.ellipse(210,132,o.r,o.r*.25,0,0,6.283);x.stroke()});x.globalAlpha=1;
+ zoomCheck();ui()}
+function tick(){bx.clearRect(0,0,bg.width,bg.height);bx.globalAlpha=.22;
+ for(const p of P){if(!still){p.vx=(p.vx+(Math.random()-.5)*.35)*.96;p.vy=(p.vy+(Math.random()-.5)*.35)*.96;p.x=(p.x+p.vx+bg.width)%bg.width;p.y=(p.y+p.vy+bg.height)%bg.height}
+  bx.fillStyle=cols[p.c];bx.beginPath();bx.arc(p.x,p.y,p.r,0,6.283);bx.fill()}
+ if(cur==SIM)sim();else if(cur==GRI)grind();requestAnimationFrame(tick)}
+readCols();go(0);tick();
+</script>
+</body>
+</html>

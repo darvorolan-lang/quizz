@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "rooms": {
+      "$pin": {
+        ".read": true,
+        ".write": true
+      }
+    },
+    "players": {
+      "$pin": {
+        ".read": true,
+        "$uid": {
+          ".write": true
+        }
+      }
+    },
+    "answers": {
+      "$pin": {
+        ".read": true,
+        "$uid": {
+          ".write": true
+        }
+      }
+    }
+  }
+}

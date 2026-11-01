@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koloid – Menu</title>
+<style>
+:root{color-scheme:light;--bg:#f4efe2;--ink:#14343c;--card:#fffdf6;--line:#2b4a52;--c:#d9622b;--a:#0f7f8c;--sh:rgba(20,52,60,.22)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+main{max-width:640px;width:100%;text-align:center}
+h1{font:800 clamp(2rem,6vw,3rem)/1.1 Georgia,serif;margin:.2em 0}
+p.sub{color:#566f77;font-size:1.05rem;margin:0 0 24px}
+.menu{display:grid;gap:14px}
+a.card{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:3px 3px 0 var(--sh);text-align:left}
+a.card:hover{border-color:var(--a)}
+a.card b{display:block;font-size:1.2rem;color:var(--a);margin-bottom:4px}
+a.card span{color:#566f77;font-size:.98rem}
+</style>
+</head>
+<body>
+<main>
+  <h1>Koloid</h1>
+  <p class="sub">Pilih bagian yang mau dibuka.</p>
+  <nav class="menu">
+    <a class="card" href="koloid.html"><b>Presentasi Koloid</b><span>Materi lengkap dan praktik maizena serta Fe(OH)₃.</span></a>
+    <a class="card" href="quiz_koloid.html"><b>Quiz Koloid (sendiri)</b><span>10 soal dengan timer dan skor. Dimainkan sendiri di perangkatmu.</span></a>
+    <a class="card" href="kahoot.html"><b>Kahoot Koloid (live)</b><span>Host membuat PIN, peserta masuk bersama, lalu podium juara di akhir.</span></a>
+  </nav>
+</main>
+</body>
+</html>
